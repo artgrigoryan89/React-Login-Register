@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 
-import ActiveUsersLocalStorage from '../ActiveUsersLocalStorage/ActiveUsersLocalStorage';
-import RemovedUsersLocalStorage from '../RemovedUsersLocalStorage/RemovedUSersLocalStorage';
+import ActiveUsersService from '../ActiveUsersService/ActiveUsersService';
+import RemovedUsersService from '../RemovedUsersService/RemovedUsersService';
 
 class LoginForm extends Component {
     constructor(props) {
@@ -22,8 +22,8 @@ class LoginForm extends Component {
     }
 
     handleLoad() {
-        window.activeUsers = new ActiveUsersLocalStorage();
-        window.removedUsers = new RemovedUsersLocalStorage();
+        window.activeUsers = new ActiveUsersService();
+        window.removedUsers = new RemovedUsersService();
     }
 
     loginHandleChange(event) {

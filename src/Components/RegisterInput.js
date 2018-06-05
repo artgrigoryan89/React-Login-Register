@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import User from '../Models/UserModel';
-import ActiveUsersLocalStorage from '../ActiveUsersLocalStorage/ActiveUsersLocalStorage';
-import RemovedUsersLocalStorage from '../RemovedUsersLocalStorage/RemovedUSersLocalStorage';
+import ActiveUsersService from '../ActiveUsersService/ActiveUsersService';
+import RemovedUsersService from '../RemovedUsersService/RemovedUsersService';
 
 class registerForm extends Component {
     constructor(props) {
@@ -24,8 +24,8 @@ class registerForm extends Component {
     }
 
     handleLoad() {
-        window.activeUsers = new ActiveUsersLocalStorage();
-        window.removedUsers = new RemovedUsersLocalStorage();
+        window.activeUsers = new ActiveUsersService();
+        window.removedUsers = new RemovedUsersService();
     }
 
     nameHandleChange(event) {

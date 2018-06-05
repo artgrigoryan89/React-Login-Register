@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import ActiveUsersLocalStorage from '../ActiveUsersLocalStorage/ActiveUsersLocalStorage';
-import RemovedUsersLocalStorage from '../RemovedUsersLocalStorage/RemovedUSersLocalStorage';
+import ActiveUsersService from '../ActiveUsersService/ActiveUsersService';
+import RemovedUsersService from '../RemovedUsersService/RemovedUsersService';
 
 class AdminPanel extends Component {
     constructor(props) {
@@ -21,8 +21,8 @@ class AdminPanel extends Component {
     }
 
     handleLoad() {
-        window.activeUsers = new ActiveUsersLocalStorage();
-        window.removedUsers = new RemovedUsersLocalStorage();
+        window.activeUsers = new ActiveUsersService();
+        window.removedUsers = new RemovedUsersService();
         this.setState({
             base: window.activeUsers
         });
