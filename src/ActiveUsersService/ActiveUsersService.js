@@ -7,10 +7,9 @@ export default class ActiveUsersService extends UsersService {
 
     getUser(login, password) {
         let found = false;
-        if(login in this.users){
-            if(this.users[login].pass == password) {
-                return found = true;
-            }
+        if ((login in this.users) && (this.users[login].pass == password)) {
+            return found = true;
         }
     }
+
 }
