@@ -1,12 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import logger from 'redux-logger'
 
-import Routes from './routes';
+import App from './components/app';
+import reducers from './reducers';
 
-const App = () => {
-    return (
-        <Routes/>
-    )
-}
+const middleware = [logger]
 
-ReactDOM.render(<App/>, document.querySelector('.input_container'));
+const createStoreWithMiddleware = applyMiddleware(...middleware)(createStore);
+
+ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <App/>
+    </Provider>
+    , document.querySelector('.input_container'));

@@ -11,5 +11,4 @@ export default class ActiveUsersService extends UsersService {
             return found = true;
         }
     }
-
 }
